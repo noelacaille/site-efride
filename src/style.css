@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --efride-black: #393e41;
+    --efride-red: #c70404;
+    --efride-blue: #00b1a7;
+    --efride-grey: #929982;
+    --efride-white: #f6f7eb;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+main {
+    text-align: center;
+}
+
+/******************************************************/
+
+header {
+    background-color: var(--efride-black);
+    color: var(--efride-white);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Ajouter le style réactif pour les écrans de petite taille */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 5px;
+    }
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px;
+    color: var(--efride-white);
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+nav ul li a:hover {
+    color: var(--efride-red);
+    transition: color 0.5s ease;
+}
+
+nav ul li a.rejoindre {
+    background-color: var(--efride-red);
+    color: var(--efride-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a.rejoindre:hover {
+    background-color: var(--efride-red);
+    transform: scale(1.05);
+}
+
+/******************************************************/
+
+/* Ajoute un espacement vertical entre les sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Ajoute des paddings à l'intérieur des sections pour aérer le contenu */
+section {
+    padding: 20px;
+}
+
+/* Ajoute une marge interne (espacement) entre les éléments à l'intérieur des sections */
+section > * {
+margin-bottom: 20px;
+}
+
+/* Exemple de style pour le contenu texte d'une section */
+.section-text {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Exemple de style pour le titre principal d'une section */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/******************************************************/

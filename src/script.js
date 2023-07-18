@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
     const logo = document.querySelector('.logo img');
-    const links = document.querySelectorAll('header nav ul li a');
+    const links = document.querySelectorAll('header nav ul li a.sc');
 
     // Clic sur le logo pour faire revenir la page en haut
     logo.addEventListener('click', function(e) {

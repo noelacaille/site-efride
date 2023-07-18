@@ -1,20 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const logo = document.querySelector('.logo img');
     const links = document.querySelectorAll('header nav ul li a');
+
+    // Clic sur le logo pour faire revenir la page en haut
+    logo.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollSmoothly(0);
+    });
 
     links.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
-            const offsetTop = target.offsetTop;
-            const duration = 1000; // Durée de l'animation en millisecondes
-            scrollSmoothly(offsetTop, duration);
+            const offsetTop = target.offsetTop - headerHeight;
+            scrollSmoothly(offsetTop);
         });
     });
 
-    function scrollSmoothly(targetPosition, duration) {
+    function scrollSmoothly(targetPosition) {
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
+        const duration = 800; // Durée de l'animation en millisecondes
         let start = null;
 
         function step(timestamp) {

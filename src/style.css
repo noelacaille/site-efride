@@ -6,6 +6,9 @@
     --efride-blue: #00b1a7;
     --efride-grey: #929982;
     --efride-white: #f6f7eb;
+    --scale-coef: 1.05;
+    --anim-time: 0.5s;
+    --scale-time: 0.3s;
 }
 
 body {
@@ -19,6 +22,13 @@ main {
     text-align: center;
 }
 
+header, footer {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 /******************************************************/
 
 header {
@@ -28,6 +38,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
@@ -70,21 +83,26 @@ nav ul li:last-child {
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
+    transition: transform var(--scale-time) ease-in-out;
 }
+
+.logo img:hover {
+    transform: scale(var(--scale-coef));
+}  
 
 nav ul li a {
     display: inline-block;
     padding: 10px;
     color: var(--efride-white);
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color var(--anim-time) ease;
 }
 
 nav ul li a:hover {
     color: var(--efride-red);
-    transition: color 0.5s ease;
+    transition: color var(--anim-time) ease;
 }
 
 nav ul li a.rejoindre {
@@ -92,12 +110,11 @@ nav ul li a.rejoindre {
     color: var(--efride-white);
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: transform var(--scale-time) ease;
 }
 
 nav ul li a.rejoindre:hover {
-    background-color: var(--efride-red);
-    transform: scale(1.05);
+    transform: scale(var(--scale-coef));
 }
 
 /******************************************************/

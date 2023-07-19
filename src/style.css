@@ -17,6 +17,7 @@
     --medium-size: 16px;
     --large-size: 25px;
     --extra-large-size: 30px;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 *, *::before, *::after {
@@ -35,6 +36,7 @@ body {
     scroll-behavior: smooth;
     color: var(--efride-black);
     text-align: center;
+    background-color: var(--efride-white);
 }
 
 body, textarea, input, button{
@@ -48,7 +50,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: var(--large-size);
+    font-size: var(--extra-large-size);
     margin-bottom: 20px;
     color: var(--efride-red);
 }
@@ -176,11 +178,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--efride-red);
-    transition: color var(--anim-time) ease-in-out;
+    transition: all var(--anim-time) ease-in-out;
 }
 
-.efride-button#rejoindre{
+nav ul li a.sc:hover {
+    color: var(--efride-red);
+}
+
+.efride-button.rejoindre {
     background-color: var(--efride-red);
 }
 
@@ -204,7 +209,7 @@ nav ul li a.rejoindre:hover {
 header nav ul li .rejoindre {
     margin-left: 10px;
 } */
-  
+
 /******************************************************/
 
 /* Ajoute un espacement vertical entre les sections */
@@ -437,7 +442,7 @@ input:focus, textarea:focus{
 }
 
 .card:has(:hover, :focus){
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: var(--shadow);
     cursor: pointer;
     --img-scale: 1.05;
     --link-icon-translate: 0;
@@ -455,53 +460,125 @@ input:focus, textarea:focus{
 
 .timeline {
     position: relative;
-    margin: 50px 0;
-  }
-  
-  .timeline-item {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid purple;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--efride-grey);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 10px 40px;
     position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-  
-  .timeline-point {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: #000;
+    background-color: inherit;
+    width: 50%;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--efride-grey);
+    top: 15px;
     border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .timeline-content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .timeline-date {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-text {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .timeline-item:nth-child(even) .timeline-content {
-    text-align: right;
-  }
-  
-  .timeline-item:nth-child(even) .timeline-image {
-    margin-left: auto;
-    margin-right: 0;
-  }
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before, .right::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    border: medium solid transparent;
+}
+
+.left::before {
+    right: 30px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--efride-red);
+}
+
+.right::before {
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--efride-red) transparent transparent;
+}
+
+.right::after {
+    left: -20px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: var(--efride-white);
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid var(--efride-black);
+}
+
+.content p{
+    font-size: var(--small-size);
+}
+
+.content:hover > h2{
+    color: var(--efride-blue);
+}
+
+.content:hover{
+    box-shadow: var(--shadow);
+}
+
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid transparent;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--efride-black) transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+
+/******************************************************/

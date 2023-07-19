@@ -18,6 +18,7 @@
     --large-size: 25px;
     --extra-large-size: 30px;
     --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --transition: all var(--anim-time) ease-in-out;
 }
 
 *, *::before, *::after {
@@ -106,7 +107,7 @@ main {
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    transition: transform var(--anim-time) ease-in-out;
+    transition: var(--transition);
     background-color: var(--efride-black);
     color: var(--efride-white);
 }
@@ -163,7 +164,7 @@ nav ul li:last-child {
 .logo img {
     height: 60px;
     width: auto;
-    transition: transform var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .logo img:hover {
@@ -174,11 +175,11 @@ nav ul li a {
     display: inline-block;
     padding: 10px;
     color: var(--efride-white);
-    transition: color var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 nav ul li a:hover {
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 nav ul li a.sc:hover {
@@ -194,7 +195,7 @@ nav ul li a.sc:hover {
     background-color: var(--efride-red);
     padding: 10px 20px;
     border-radius: var(--radius);
-    transition: transform var(--anim-time) ease-in-out;
+    transition: var(--transition);
 } */
 /* 
 nav ul li a.rejoindre:hover {
@@ -345,7 +346,7 @@ input:focus, textarea:focus{
     border-radius: var(--radius);
     background-color: var(--efride-red);
     color: var(--efride-white);
-    transition: transform var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .submit-button button:hover {
@@ -377,14 +378,14 @@ input:focus, textarea:focus{
     width: 300px;
     height: 450px;
     border-radius: var(--radius);
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .card figure{
     width: 100%;
     height: 50%;
     border-radius: var(--radius) var(--radius) 0 0;
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
     overflow: hidden;
 }
 
@@ -396,7 +397,7 @@ input:focus, textarea:focus{
     border-radius: var(--radius) var(--radius) 0 0;
     transform-origin: center;
     transform: scale(var(--img-scale));
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .card-body{
@@ -407,7 +408,7 @@ input:focus, textarea:focus{
 .card-body h2{
     font-size: var(--large-size);
     text-align: center;
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .card:hover h2{
@@ -433,12 +434,12 @@ input:focus, textarea:focus{
     margin-left: 5px;
     transform: translateX(var(--link-icon-translate));
     opacity: var(--link-icon-opacity);
-    transition: all 0.3s;
+    transition: var(--transition);
 }
 
 .card-body a span{
     color: var(--efride-blue);
-    transition: all var(--anim-time) ease-in-out;
+    transition: var(--transition);
 }
 
 .card:has(:hover, :focus){
@@ -459,10 +460,11 @@ input:focus, textarea:focus{
 /******************************************************/
 
 .timeline {
+    --title-color: var(--efride-black);
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 .timeline::after {
@@ -473,26 +475,73 @@ input:focus, textarea:focus{
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
+    /* margin-left: -3px; */
+}
+
+/* .content .text{
+    border: 1px solid blue;
+} */
+
+.content figure{
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    /* border: 1px solid green; */
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.container figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .container {
     padding: 10px 40px;
     position: relative;
-    background-color: inherit;
     width: 50%;
+    border-radius: var(--radius);
 }
 
-.container::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: var(--efride-grey);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
+.content{
+    background-color: var(--efride-white);
+    position: relative;
+    border-radius: 6px;
+    /* border: 1px solid var(--efride-black); */
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
+
+.content .text h2{
+    text-align: center;
+    color: var(--title-color);
+}
+
+.content .text p.desc{
+    font-weight: bold;
+    font-size: var(--medium-size);
+}
+
+.content h2{
+    transition: var(--transition);
+}
+
+.content p{
+    font-size: var(--small-size);
+}
+
+.content:hover > h2{
+    color: var(--efride-blue);
+}
+
+.content:hover{
+    box-shadow: var(--shadow);
+    cursor: grab;
+    --title-color: var(--efride-blue);
 }
 
 .left {
@@ -501,6 +550,18 @@ input:focus, textarea:focus{
 
 .right {
     left: 50%;
+}
+
+/* .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: calc(0px);
+    background-color: var(--efride-grey);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .left::before, .right::before{
@@ -526,28 +587,8 @@ input:focus, textarea:focus{
 }
 
 .right::after {
-    left: -20px;
-}
-
-.content {
-    padding: 20px 30px;
-    background-color: var(--efride-white);
-    position: relative;
-    border-radius: 6px;
-    border: 1px solid var(--efride-black);
-}
-
-.content p{
-    font-size: var(--small-size);
-}
-
-.content:hover > h2{
-    color: var(--efride-blue);
-}
-
-.content:hover{
-    box-shadow: var(--shadow);
-}
+    left: -16px;
+} */
 
 @media screen and (max-width: 600px) {
     /* Place the timelime to the left */
@@ -582,3 +623,6 @@ input:focus, textarea:focus{
 }
 
 /******************************************************/
+
+/* header{display: none;} */
+/* main{padding: 0;} */

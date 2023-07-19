@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!--
+
+$$$$$$$$\ $$$$$$$$\ $$\ $$$$$$$\  $$\       $$\           
+$$  _____|$$  _____|$  |$$  __$$\ \__|      $$ |          
+$$ |      $$ |      \_/ $$ |  $$ |$$\  $$$$$$$ | $$$$$$\  
+$$$$$\    $$$$$\        $$$$$$$  |$$ |$$  __$$ |$$  __$$\ 
+$$  __|   $$  __|       $$  __$$< $$ |$$ /  $$ |$$$$$$$$ |
+$$ |      $$ |          $$ |  $$ |$$ |$$ |  $$ |$$   ____|
+$$$$$$$$\ $$ |          $$ |  $$ |$$ |\$$$$$$$ |\$$$$$$$\ 
+\________|\__|          \__|  \__|\__| \_______| \_______|
+
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +22,11 @@
     <link rel="icon" href="../img/Logo_EFRide_icon.png" type="image/x-icon">
 </head>
 
+<!----------------------------------------------------------------->
+
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="logo">
             <a href=""><img src="../img/Logo_EFRide_Bas.png" alt="Logo EF'Ride"></a>
@@ -22,82 +38,179 @@
                 <li><a href="#section-equipe" class="sc sc-equipe">Notre&nbsp;équipe</a></li>
                 <li><a href="#section-reseaux" class="sc sc-reseaux">Nos&nbsp;réseaux</a></li>
                 <li><a href="#section-contact" class="sc sc-contact">Contact</a></li>
-                <li><a href="rejoindre.html" class="rejoindre">Nous&nbsp;rejoindre</a></li>
+                <li>
+                    <div class="efride-button rejoindre">
+                        <a href="https://www.helloasso.com/associations/efride/adhesions/adhesion-fin-d-annee-2022-2023" target="_blank">Nous rejoindre</a>
+                    </div>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <div id="dimensions"></div>
+
+    <!------------------------------------------------------------->
+
+    <!-- MAIN -->
     <main>
 
+        <!-- CARROUSSEL D'IMAGES ET STATS -->
         <section id="section-carroussel">
         </section>
 
+        <!--------------------------------------------------------->
+
         <section id="main-section">
 
+            <!-- NOS ACTIVITES -->
             <section id="section-activites">
-                <h2>Nos activités</h2>
-                <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor porta leo in mollis. Nunc malesuada tortor sem, ac venenatis libero efficitur ut. Curabitur pellentesque, nisl eu luctus cursus, elit elit molestie odio, nec congue orci dui eget tellus. Etiam id odio non mi rutrum faucibus eget ut velit. Donec ut magna vel lorem sollicitudin pretium. Maecenas nec tortor vitae magna interdum egestas. Nam mattis tempor lobortis. Integer bibendum, massa et scelerisque efficitur, libero enim vehicula leo, scelerisque pharetra dui lorem sed ligula. Etiam vel metus vel leo ultrices mattis eget vitae risus. Phasellus dolor nisi, sodales eu lobortis quis, gravida eu ante. Donec mollis arcu sed turpis convallis, et aliquet mauris tincidunt. Proin ornare lectus eu sapien dapibus malesuada. Aliquam mollis a turpis vitae faucibus. Sed varius pharetra est, sed auctor dui tempor et. Phasellus malesuada orci non mauris auctor faucibus. Sed tellus dui, venenatis id tellus consectetur, accumsan hendrerit erat.
+                <h1>Nos activités</h1>
+                <div class="card-container flex-container">
+
+                    <div class="card">
+                        <figure>
+                            <img src="../img/cyclisme.png" alt="Cyclisme">
+                        </figure>
+                        <div class="card-body">
+                            <h2>Cyclisme</h2>
+                            <p>
+                                Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros.
+                            </p>
+                            <a href="">
+                                <span>En savoir plus</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <figure>
+                            <img src="../img/roller.png" alt="Roller">
+                        </figure>
+                        <div class="card-body">
+                            <h2>Roller</h2>
+                            <p>
+                                Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros.
+                            </p>
+                            <a href="">
+                                <span>En savoir plus</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <figure>
+                            <img src="../img/skate.png" alt="Skate">
+                        </figure>
+                        <div class="card-body">
+                            <h2>Skateboard</h2>
+                            <p>
+                                Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros.
+                            </p>
+                            <a href="">
+                                <span>En savoir plus</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
+            <!----------------------------------------------------->
+
+            <!-- NOTRE HISTOIRE -->
             <section id="section-histoire">
-                <h2>Notre histoire</h2>
-                <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor porta leo in mollis. Nunc malesuada tortor sem, ac venenatis libero efficitur ut. Curabitur pellentesque, nisl eu luctus cursus, elit elit molestie odio, nec congue orci dui eget tellus. Etiam id odio non mi rutrum faucibus eget ut velit. Donec ut magna vel lorem sollicitudin pretium. Maecenas nec tortor vitae magna interdum egestas. Nam mattis tempor lobortis. Integer bibendum, massa et scelerisque efficitur, libero enim vehicula leo, scelerisque pharetra dui lorem sed ligula. Etiam vel metus vel leo ultrices mattis eget vitae risus. Phasellus dolor nisi, sodales eu lobortis quis, gravida eu ante. Donec mollis arcu sed turpis convallis, et aliquet mauris tincidunt. Proin ornare lectus eu sapien dapibus malesuada. Aliquam mollis a turpis vitae faucibus. Sed varius pharetra est, sed auctor dui tempor et. Phasellus malesuada orci non mauris auctor faucibus. Sed tellus dui, venenatis id tellus consectetur, accumsan hendrerit erat.
-                </div>
+                <h1>Notre histoire</h1>
+                <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-point"></div>
+                      <div class="timeline-content">
+                        <h4 class="timeline-date">Date 1</h4>
+                        <img src="../img/Logo_EFRide_Banniere.png" alt="Image 1" class="timeline-image">
+                        <p class="timeline-text">Texte détaillant l'événement 1</p>
+                      </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                      <div class="timeline-point"></div>
+                      <div class="timeline-content">
+                        <h4 class="timeline-date">Date 2</h4>
+                        <img src="../img/Logo_EFRide_Banniere.png" alt="Image 2" class="timeline-image">
+                        <p class="timeline-text">Texte détaillant l'événement 2</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Ajoute d'autres éléments de la timeline ici -->
+                  </div>                  
             </section>
-        
+
+            <!----------------------------------------------------->
+
+            <!-- NOTRE EQUIPE -->
             <section id="section-equipe">
-                <h2>Notre équipe</h2>
+                <h1>Notre équipe</h1>
                 <div class="text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor porta leo in mollis. Nunc malesuada tortor sem, ac venenatis libero efficitur ut. Curabitur pellentesque, nisl eu luctus cursus, elit elit molestie odio, nec congue orci dui eget tellus. Etiam id odio non mi rutrum faucibus eget ut velit. Donec ut magna vel lorem sollicitudin pretium. Maecenas nec tortor vitae magna interdum egestas. Nam mattis tempor lobortis. Integer bibendum, massa et scelerisque efficitur, libero enim vehicula leo, scelerisque pharetra dui lorem sed ligula. Etiam vel metus vel leo ultrices mattis eget vitae risus. Phasellus dolor nisi, sodales eu lobortis quis, gravida eu ante. Donec mollis arcu sed turpis convallis, et aliquet mauris tincidunt. Proin ornare lectus eu sapien dapibus malesuada. Aliquam mollis a turpis vitae faucibus. Sed varius pharetra est, sed auctor dui tempor et. Phasellus malesuada orci non mauris auctor faucibus. Sed tellus dui, venenatis id tellus consectetur, accumsan hendrerit erat.
-                </div>
-            </section>
-    
-            <section id="section-reseaux">
-                <h2>Nos réseaux</h2>
-                <div class="media-list flex-container">
-                    <div class="social-network" id="instagram">
-                        <a href="https://www.instagram.com/ef.ride" target="_blank">
-                            <button class="insta-btn">
-                                <img src="../img/medias/instagram.png" alt="Instagramm" class="sn-icon">
-                                <span>Instagram - @ef.ride</span>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="social-network" id="tiktok">
-                        <a href="https://www.tiktok.com/@ef.ride" target="_blank">
-                            <button class="tiktok-btn">
-                                <img src="../img/medias/tiktok.png" alt="TikTok" class="sn-icon">
-                                <span>TikTok - @ef.ride</span>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="social-network" id="linkedin">
-                        <a href="https://www.linkedin.com/company/ef-ride/" target="_blank">
-                            <button class="linkedin-btn">
-                                <img src="../img/medias/linkedin.png" alt="LinkedIn" class="sn-icon">
-                                <span>LinkedIn - EF'Ride</span>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="social-network" id="discord">
-                        <a href="https://discord.gg/CHbvDKCTYa" target="_blank">
-                            <button class="discord-btn">
-                                <img src="../img/medias/discord.png" alt="Discord" class="sn-icon">
-                                <span>Discord - EF'Ride</span>
-                            </button>
-                        </a>
-                    </div>
                 </div>
             </section>
 
+            <!-- NOS RESEAUX -->
+            <section id="section-reseaux">
+                <h1>Nos réseaux</h1>
+                <div class="media-list flex-container">
+
+                    <!-- Instagram -->
+                    <div class="efride-button" id="instagram">
+                        <a href="https://www.instagram.com/ef.rid" target="_blank">
+                            <img src="../img/medias/instagram.png" alt="Instagram" class="sn-icon">
+                            <span>Instagram - @ef.ride</span>
+                        </a>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="efride-button" id="tiktok">
+                        <a href="https://www.tiktok.com/@ef.ride" target="_blank">
+                            <img src="../img/medias/tiktok.png" alt="TikTok" class="sn-icon">
+                            <span>TikTok - @ef.ride</span>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="efride-button" id="linkedin">
+                        <a href="https://www.linkedin.com/company/ef-ride/" target="_blank">
+                            <img src="../img/medias/linkedin.png" alt="LinkedIn" class="sn-icon">
+                            <span>LinkedIn - EF'Ride</span>
+                        </a>
+                    </div>
+
+                    <!-- Discord -->
+                    <div class="efride-button" id="discord">
+                        <a href="https://discord.gg/CHbvDKCTYa" target="_blank">
+                            <img src="../img/medias/discord.png" alt="Discord" class="sn-icon">
+                            <span>Discord - EF'Ride</span>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!----------------------------------------------------->
+
+            <!-- CONTACT -->
             <section id="section-contact">
-                <h2>Contact</h2>
-                <p>Vous pouvez nous contacter par mail à l'adresse&nbsp;<a href="mailto:efridee@gmail.com"><u>efridee@gmail.com</u></a> ou en remplissant le formulaire suivant&nbsp;:</p>
+                <h1>Contact</h1>
+                <p>Vous pouvez nous contacter sur nos réseaux sociaux, par mail à l'adresse&nbsp;<a href="mailto:efridee@gmail.com"><u>efridee@gmail.com</u></a>, ou bien en remplissant le formulaire suivant&nbsp;:</p>
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/mjvqkkde" method="POST">
+                    <form action="https://formspree.io/f/mjvqkkde" method="POST" id="form1">
                         <div class="form-elem"> 
                             <input id="nom" type="text" name="nom" placeholder="Nom et prénom" required>
                         </div>
@@ -113,10 +226,10 @@
                         <div class="form-elem">
                             <textarea id="message" name="message" placeholder="Message" required></textarea>
                         </div>
-        
-                        <div class="submit-button">
-                            <button id="submit" type="submit">Envoyer</button>
-                        </div>
+
+                        <button class="efride-button" id="submit-button">
+                            Envoyer
+                        </button>
                     </form>
                 </div>
             </section>
@@ -128,4 +241,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

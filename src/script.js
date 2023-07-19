@@ -47,3 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /******************************************************/
+
+function updateDimensions() {
+    const dimensionsElement = document.getElementById('dimensions');
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    dimensionsElement.textContent = `${width} x ${height}`;
+}
+
+// Appel initial pour mettre à jour les dimensions
+updateDimensions();
+
+// Écouteur d'événement de redimensionnement de la fenêtre pour mettre à jour les dimensions en temps réel
+window.addEventListener('resize', updateDimensions);
+
+/******************************************************/

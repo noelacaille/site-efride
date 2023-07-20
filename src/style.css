@@ -451,7 +451,7 @@ input:focus, textarea:focus{
 .card:has(:hover, :focus){
     box-shadow: var(--shadow);
     cursor: pointer;
-    --img-scale: 1.05;
+    --img-scale: var(--scale-coef);
     --link-icon-translate: 0;
     --link-icon-opacity: 1;
 }
@@ -695,9 +695,17 @@ header, #section-carroussel, #section-activites, #section-histoire, #section-res
     transition: var(--transition);
 }
 
+.pcard:hover h2{
+    color: var(--efride-blue);
+}
+
 .pcard-body{
     padding: 10px;
-    text-align: left;
+    border: 1px solid orange;
+}
+
+.pcard-links{
+    border: 1px solid green;
 }
 
 .pcard-body h2{
@@ -706,20 +714,22 @@ header, #section-carroussel, #section-activites, #section-histoire, #section-res
     transition: var(--transition);
 }
 
-.pcard:hover h2{
-    color: var(--efride-blue);
-}
-
 .pcard-body p{
     font-size: var(--small-size);
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.pcard:has(:hover, :focus){
-    box-shadow: var(--shadow);
-    cursor: grab;
-    --img-scale: 1.05;
-    --link-icon-translate: 0;
-    --link-icon-opacity: 1;
+.pcard .pcard-links figure{
+    width: 30px;
+    height: auto;
+    transition: var(--transition);
+}
+
+.pcard figure.team-linkedin img{
+    border-radius: 50%;
+}
+
+.pcard .pcard-links figure:hover{
+    transform: scale(var(--scale-coef));
 }

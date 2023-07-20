@@ -27,12 +27,6 @@
     padding: 0;
 }
 
-@media screen and (max-width: 300px) {
-    body {
-        display: none;
-    }
-}
-
 body {
     scroll-behavior: smooth;
     color: var(--efride-black);
@@ -93,6 +87,18 @@ main {
     padding: 6px;
     font-size: var(--small-size);
     z-index: 9999;
+}
+
+.vertical-bar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 /******************************************************/
@@ -461,33 +467,49 @@ input:focus, textarea:focus{
 
 .timeline {
     --title-color: var(--efride-black);
+    --timeline-bar-size: 6px;
+    --triangle-bw: 10px;
+    --circle-width: 25px;
+    --objects-margin: 10px;
+    --cont-padding-tb: 10px;
+    --cont-padding-lr: 40px;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    /* border: 1px solid purple; */
 }
 
+/* vertical bar */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 6px;
+    width: var(--timeline-bar-size);
     background-color: var(--efride-grey);
     top: 0;
     bottom: 0;
     left: 50%;
-    /* margin-left: -3px; */
+    margin-left: calc(var(--timeline-bar-size) * -0.5);
+    border-radius: var(--radius);
 }
 
-/* .content .text{
-    border: 1px solid blue;
-} */
+.container {
+    padding: var(--cont-padding-tb) var(--cont-padding-lr);
+    position: relative;
+    width: 50%;
+    border-radius: var(--radius);
+}
+
+.content {
+    background-color: var(--efride-white);
+    position: relative;
+    border-radius: 6px;
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
 
 .content figure{
     width: 100%;
     height: 100%;
-    max-height: 200px;
     object-fit: cover;
-    /* border: 1px solid green; */
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
 }
@@ -500,42 +522,25 @@ input:focus, textarea:focus{
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.container {
-    padding: 10px 40px;
-    position: relative;
-    width: 50%;
-    border-radius: var(--radius);
-}
-
-.content{
-    background-color: var(--efride-white);
-    position: relative;
-    border-radius: 6px;
-    /* border: 1px solid var(--efride-black); */
-    transition: var(--transition);
-    border-radius: var(--radius);
+.content .text{
+    padding: 10px;
 }
 
 .content .text h2{
     text-align: center;
     color: var(--title-color);
+    transition: var(--transition);
+}
+
+.content .text p{
+    font-size: var(--small-size);
+    margin-top: 10px;
 }
 
 .content .text p.desc{
     font-weight: bold;
     font-size: var(--medium-size);
-}
-
-.content h2{
-    transition: var(--transition);
-}
-
-.content p{
-    font-size: var(--small-size);
-}
-
-.content:hover > h2{
-    color: var(--efride-blue);
+    color: var(--efride-grey);
 }
 
 .content:hover{
@@ -544,51 +549,66 @@ input:focus, textarea:focus{
     --title-color: var(--efride-blue);
 }
 
+.content:hover > h2{
+    color: var(--efride-blue);
+}
+
+/* left containers */
 .left {
     left: 0;
 }
 
+/* right containers */
 .right {
     left: 50%;
 }
 
-/* .container::after {
+/* triangles left/right */
+.container::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: calc(var(--cont-padding-tb) + var(--objects-margin));
+    width: 0;
+    z-index: 2;
+    border: medium solid transparent;
+}
+
+/* triangles left */
+.container.left::before {
+    right: calc(var(--cont-padding-lr) - var(--triangle-bw));
+    border-width: var(--triangle-bw) 0 var(--triangle-bw) var(--triangle-bw);
+    border-color: transparent transparent transparent var(--efride-red);
+}
+
+/* triangles right */
+.container.right::before {
+    left: calc(var(--cont-padding-lr) - var(--triangle-bw));
+    border-width: var(--triangle-bw) var(--triangle-bw) var(--triangle-bw) 0;
+    border-color: transparent var(--efride-red) transparent;
+}
+
+/* circles left/right */
+.container::after {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 25px;
-    right: calc(0px);
+    width: var(--circle-width);
+    height: var(--circle-width);
     background-color: var(--efride-grey);
-    top: 15px;
+    top: calc(var(--cont-padding-tb) + var(--objects-margin) - (var(--circle-width) - var(--triangle-bw) * 2) * 0.5);
     border-radius: 50%;
     z-index: 1;
 }
 
-.left::before, .right::before{
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    border: medium solid transparent;
+/* circles left */
+.container.left::after {
+    right: calc(var(--circle-width) * -0.5);
 }
 
-.left::before {
-    right: 30px;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--efride-red);
+/* circles right */
+.container.right::after {
+    left: calc(var(--circle-width) * -0.5);
 }
-
-.right::before {
-    left: 30px;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent var(--efride-red) transparent transparent;
-}
-
-.right::after {
-    left: -16px;
-} */
 
 @media screen and (max-width: 600px) {
     /* Place the timelime to the left */
@@ -623,6 +643,3 @@ input:focus, textarea:focus{
 }
 
 /******************************************************/
-
-/* header{display: none;} */
-/* main{padding: 0;} */

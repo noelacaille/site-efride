@@ -63,10 +63,10 @@ a {
 }
 
 main {
-    padding: 0 10vw;
+    padding: 0 5vw;
 }
 
-@media screen and (max-width: 800px) and (min-width: 301px) {
+/* @media screen and (max-width: 800px) and (min-width: 301px) {
     main {
         padding: 0 5vw;
     }
@@ -76,7 +76,7 @@ main {
     main {
         padding: 0;
     }
-}
+} */
 
 #dimensions {
     position: fixed;
@@ -473,6 +473,7 @@ input:focus, textarea:focus{
     --objects-margin: 10px;
     --cont-padding-tb: 10px;
     --cont-padding-lr: 40px;
+    --resp-left-border: 70px;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -515,7 +516,7 @@ input:focus, textarea:focus{
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.container figure img{
+.content figure img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -555,16 +556,16 @@ input:focus, textarea:focus{
 }
 
 /* left containers */
-.left {
+.container.left {
     left: 0;
 }
 
 /* right containers */
-.right {
+.container.right {
     left: 50%;
 }
 
-/* triangles left/right */
+/* triangles */
 .container::before {
     content: " ";
     height: 0;
@@ -589,7 +590,7 @@ input:focus, textarea:focus{
     border-color: transparent var(--efride-red) transparent;
 }
 
-/* circles left/right */
+/* circles */
 .container::after {
     content: '';
     position: absolute;
@@ -611,36 +612,36 @@ input:focus, textarea:focus{
     left: calc(var(--circle-width) * -0.5);
 }
 
-@media screen and (max-width: 600px) {
-    /* Place the timelime to the left */
+@media screen and (max-width: 950px) {
+
     .timeline::after {
-        left: 31px;
+        left: calc(var(--resp-left-border) * 0.5);
     }
 
-    /* Full-width containers */
     .container {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        padding-left: var(--resp-left-border);
+        padding-right: 0px;
     }
 
-    /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-        left: 60px;
-        border: medium solid transparent;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent var(--efride-black) transparent transparent;
-    }
-
-    /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-        left: 15px;
-    }
-
-    /* Make all right containers behave like the left ones */
-    .right {
+    /* right containers */
+    .container.right {
         left: 0%;
     }
+
+    /* triangles */
+    .container.left::before, .container.right::before {
+        left: calc(var(--resp-left-border) - var(--triangle-bw));
+        border: medium solid transparent;
+        border-width: var(--triangle-bw) var(--triangle-bw) var(--triangle-bw) 0;
+        border-color: transparent var(--efride-red) transparent transparent;
+    }
+
+    /* circles */
+    .container.left::after, .container.right::after {
+        left: calc(var(--resp-left-border) * 0.5 - var(--circle-width) * 0.5);
+    }
+
 }
 
 /******************************************************/

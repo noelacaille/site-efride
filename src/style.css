@@ -27,9 +27,9 @@
     padding: 0;
 }
 
-body {
-    scroll-behavior: smooth;
+html, body {
     color: var(--efride-black);
+    scroll-behavior: smooth;
     text-align: center;
     background-color: var(--efride-white);
     position: relative;
@@ -51,7 +51,7 @@ h1{
     color: var(--efride-red);
 }
 
-header, img, .efride-button {
+header, img, .efride-button, .navv {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -67,18 +67,6 @@ main {
     padding: 0 5vw;
 }
 
-/* @media screen and (max-width: 800px) and (min-width: 301px) {
-    main {
-        padding: 0 5vw;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    main {
-        padding: 0;
-    }
-} */
-
 #dimensions {
     position: fixed;
     top: 0;
@@ -90,7 +78,7 @@ main {
     z-index: 9999;
 }
 
-.vertical-bar {
+/* .vertical-bar {
     position: fixed;
     top: 0;
     left: 50%;
@@ -100,7 +88,7 @@ main {
     background-color: #000;
     z-index: 9999;
     pointer-events: none;
-}
+} */
 
 /******************************************************/
 
@@ -383,6 +371,7 @@ input:focus, textarea:focus{
     --img-scale: 1;
     --link-icon-translate: -20px;
     --link-icon-opacity: 0;
+    --arrow-color: transparent;
     position: relative;
     width: 300px;
     height: 450px;
@@ -444,6 +433,7 @@ input:focus, textarea:focus{
     transform: translateX(var(--link-icon-translate));
     opacity: var(--link-icon-opacity);
     transition: var(--transition);
+    color: var(--arrow-color);
 }
 
 .card-body a span{
@@ -457,6 +447,7 @@ input:focus, textarea:focus{
     --img-scale: var(--scale-coef);
     --link-icon-translate: 0;
     --link-icon-opacity: 1;
+    --arrow-color: var(--efride-blue);
 }
 
 .card a::after{
@@ -757,6 +748,7 @@ footer{
     position: static;
     width: 100%;
     height: auto;
+    left: 0;
     bottom: 0;
     z-index: 999;
 }
@@ -797,7 +789,151 @@ footer #footer-rights a{
 }
 
 footer #footer-rights a:hover{
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 /******************************************************/
+
+.retour{
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    --arrow-color: transparent;
+    position: sticky;
+    padding: 10px;
+    top: 130px;
+    left: 0px;
+    width: 120px;
+    height: auto;
+    z-index: 1000;
+    font-size: 120%;
+}
+
+.retour a{
+    display: inline-flex;
+    align-items: center;
+    color: var(--efride-blue);
+}
+
+.retour a .icon{
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    transform: rotate(180deg) translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: var(--transition);
+    color: var(--arrow-color);
+}
+
+.retour a span{
+    color: var(--efride-blue);
+    transition: var(--transition);
+}
+
+.retour:has(:hover, :focus){
+    cursor: pointer;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    --arrow-color: var(--efride-blue);
+}
+
+.retour a::before{
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    content: "";
+}
+
+/******************************************************/
+
+main.sp{
+    margin: 40px 80px;
+    padding: 0;
+}
+
+.sp-carroussel{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sp-carroussel .slide{
+    width: 50%;
+    height: 90%;
+    display: none;
+    overflow: hidden;
+    border-radius: var(--radius);
+    position: absolute;
+    left: 25%;
+}
+
+.sp-carroussel .slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sp-carroussel .slide.active{
+    display: block;
+}
+
+.sp-carroussel .nav-box{
+    width: 25%;
+    height: 90%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.sp-carroussel .prev-box{
+    left: 0;
+    justify-content: right;
+}
+
+.sp-carroussel .next-box{
+    left: 75%;
+    justify-content: left;
+}
+
+.sp-carroussel .navv{
+    width: 35px;
+    height: 70px;
+    font-size: var(--large-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.sp-carroussel .navv:hover{
+    cursor: pointer;
+    color: var(--efride-grey);
+}
+
+.dots{
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dots .dot{
+    width: 12px;
+    height: 12px;
+    background-color: var(--efride-grey);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.dots .dot:hover{
+    background-color: var(--efride-black);
+}
+
+.dots .dot.active{
+    background-color: var(--efride-black);
+}

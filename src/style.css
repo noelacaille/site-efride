@@ -103,6 +103,20 @@ main {
 
 /******************************************************/
 
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+}
+
+/******************************************************/
+
 .efride-button{
     margin: 0;
     padding: 0;
@@ -358,18 +372,6 @@ input:focus, textarea:focus{
 .submit-button button:hover {
     transform: scale(var(--scale-coef));
     cursor: pointer;
-}
-
-/******************************************************/
-
-.flex-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 20px;
 }
 
 /******************************************************/
@@ -646,14 +648,7 @@ input:focus, textarea:focus{
 
 /******************************************************/
 
-header, #section-carroussel, #section-activites, #section-histoire, #section-reseaux, #section-contact{display: none;}
-
-#section-equipe{
-    border: 1px solid black;
-    position: relative;
-}
-
-.horizontal-bar{
+/* .horizontal-bar{
     position: absolute;
     top: 200px;
     width: 100%;
@@ -662,74 +657,95 @@ header, #section-carroussel, #section-activites, #section-histoire, #section-res
     left: 0;
     border-radius: var(--radius);
     z-index: -1;
+} */
+
+.team-cards-container{
+    justify-content: center;
+    gap: 60px;
 }
 
-.pcard{
-    --img-scale: 1;
-    --link-icon-translate: -20px;
-    --link-icon-opacity: 0;
+.team-card{
+    --img-scale-factor: 1;
     position: relative;
-    width: 150px;
-    height: 450px;
+    width: 200px;
+    height: 350px;
     border-radius: var(--radius);
     transition: var(--transition);
-    border: 1px solid purple;
-}
-
-.pcard figure{
-    width: 100%;
-    height: 50%;
-    border-radius: var(--radius) var(--radius) 0 0;
-    transition: var(--transition);
+    border: 1px solid var(--efride-grey);
     overflow: hidden;
 }
 
-.pcard figure img{
+.team-card figure.photo{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.team-card figure.photo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-    border-radius: var(--radius) var(--radius) 0 0;
-    transform-origin: center;
-    transform: scale(var(--img-scale));
+    transform: scale(var(--img-scale-factor));
     transition: var(--transition);
 }
 
-.pcard:hover h2{
+.team-card:hover{
+    box-shadow: var(--shadow);
+    cursor: grab;
+    --img-scale-factor: var(--scale-coef);
+}
+
+.team-card:hover h2{
     color: var(--efride-blue);
 }
 
-.pcard-body{
+.team-card-body{
     padding: 10px;
-    border: 1px solid orange;
+    height: 50%;
 }
 
-.pcard-links{
-    border: 1px solid green;
-}
-
-.pcard-body h2{
+.team-card-body h2{
     font-size: var(--large-size);
-    text-align: center;
     transition: var(--transition);
+    height: 40px;
 }
 
-.pcard-body p{
+.team-card-body p.statut{
+    font-size: var(--medium-size);
+    font-weight: bold;
+    color: var(--efride-grey);
+    height: 30px;
+}
+
+.team-card-body p.promo{
     font-size: var(--small-size);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 30px;
 }
 
-.pcard .pcard-links figure{
+.team-card-links{
+    height: 55px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.team-card-links figure{
     width: 30px;
-    height: auto;
+    height: 30px;
     transition: var(--transition);
 }
 
-.pcard figure.team-linkedin img{
+.team-card-links figure img{
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.pcard .pcard-links figure:hover{
+.team-card-links figure:hover{
     transform: scale(var(--scale-coef));
+    cursor: pointer;
 }
+
+/******************************************************/

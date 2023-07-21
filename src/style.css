@@ -19,6 +19,8 @@
     --extra-large-size: 30px;
     --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     --transition: all var(--anim-time) ease-in-out;
+    --header-height: 90px;
+    --footer-height: 130px;
 }
 
 *, *::before, *::after {
@@ -63,7 +65,11 @@ a {
     color: var(--efride-black);
 }
 
-main {
+main{
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+#main-section {
     padding: 0 5vw;
 }
 
@@ -149,6 +155,7 @@ header {
     top: 0;
     z-index: 999;
     overflow: hidden;
+    height: var(--header-height);
 }
 
 .logo {
@@ -306,10 +313,6 @@ section > * {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 25px;
-}
-
-.embedsocial-hashtag{
-    margin: 20px 0;
 }
 
 /******************************************************/
@@ -747,7 +750,7 @@ footer{
     background-color: var(--efride-black);
     position: static;
     width: 100%;
-    height: auto;
+    height: var(--footer-height);
     left: 0;
     bottom: 0;
     z-index: 999;
@@ -936,4 +939,33 @@ main.sp{
 
 .dots .dot.active{
     background-color: var(--efride-black);
+}
+
+/******************************************************/
+
+#section-accueil{
+    height: calc(100vh - var(--header-height));
+    padding: 0;
+    margin: 0 0 40px 0;
+    position: relative;
+}
+
+#section-accueil figure{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#section-accueil figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section-accueil .cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
 }

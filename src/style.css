@@ -32,6 +32,7 @@ body {
     color: var(--efride-black);
     text-align: center;
     background-color: var(--efride-white);
+    position: relative;
 }
 
 body, textarea, input, button{
@@ -50,7 +51,7 @@ h1{
     color: var(--efride-red);
 }
 
-header, footer, img, .efride-button {
+header, img, .efride-button {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -746,6 +747,57 @@ input:focus, textarea:focus{
 .team-card-links figure:hover{
     transform: scale(var(--scale-coef));
     cursor: pointer;
+}
+
+/******************************************************/
+
+footer{
+    --img-scale-f3: 1;
+    background-color: var(--efride-black);
+    position: static;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    z-index: 999;
+}
+
+footer #footer-logos{
+    padding: 15px 15px 10px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+footer #footer-logos figure{
+    height: 50px;
+}
+
+footer #footer-logos figure img{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(var(--img-scale-f3));
+    transition: var(--transition);
+}
+
+footer #footer-logos figure img:hover{
+    --img-scale-f3: var(--scale-coef);
+    cursor: pointer;
+}
+
+footer #footer-rights{
+    color: var(--efride-white);
+    font-size: var(--small-size);
+    padding: 10px 15px 15px 15px;
+}
+
+footer #footer-rights a{
+    transition: var(--transition);
+    color: var(--efride-white);
+}
+
+footer #footer-rights a:hover{
+    opacity: 0.7;
 }
 
 /******************************************************/

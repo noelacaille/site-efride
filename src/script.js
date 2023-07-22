@@ -62,9 +62,41 @@ dots.forEach((item, indexDot) => {
     })
 })
 
-next.addEventListener('click', nextSlide);
-prev.addEventListener('click', prevSlide);
+if (next){next.addEventListener('click', nextSlide);}
+if (prev){prev.addEventListener('click', prevSlide);}
 
 // setInterval(nextSlide, 5000);
 
 /******************************************************/
+
+// Vérifie si l'élément existe avant d'ajouter un événement
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach((counter) => {
+  const numberElement = counter.querySelector('.number');
+  if (numberElement) {
+    const targetNumber = parseInt(numberElement.textContent);
+    const animationDuration = 2000;
+    const framesPerSecond = 60;
+    const frameDuration = Math.round(1000 / framesPerSecond);
+
+    let currentNumber = 0;
+    let frame = 0;
+
+    function updateCounter() {
+      const progress = frame / (animationDuration / frameDuration);
+      const increment = Math.floor(targetNumber * progress);
+
+      if (currentNumber < targetNumber) {
+        numberElement.textContent = increment;
+        currentNumber = increment;
+        frame++;
+        requestAnimationFrame(updateCounter);
+      } else {
+        numberElement.textContent = targetNumber;
+      }
+    }
+
+    updateCounter();
+  }
+});

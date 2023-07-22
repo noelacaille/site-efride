@@ -954,8 +954,8 @@ main.sp{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    opacity: 0.8;
 }
-
 
 #section-accueil figure img{
     width: 100%;
@@ -965,7 +965,53 @@ main.sp{
 
 #section-accueil .cta{
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
+}
+
+.counter-container{
+    justify-content: center;
+    gap: 75px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.counter{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--efride-white);
+    width: 200px;
+    height: auto;
+}
+
+.counter .icon{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.counter .icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.counter .number{
+    font-size: 35px;
+}
+
+.counter .title{
+    font-size: 22px;
+}
+
+.page-title{
+    font-size: var(--extra-large-size);
+    font-weight: bold;
+    color: var(--efride-black);
+    margin-bottom: 20px;
 }

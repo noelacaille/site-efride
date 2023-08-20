@@ -1,18 +1,12 @@
-A faire site EF'Ride :
-
-• régler pb scroll smooth (15min)
-• régler pb min height (15min)
-
-• 14:00 - 16:00 : responsive
-      • header
-      • accueil
-      • activités
-      • timeline
-      • équipe
-      • réseaux
-      • contact
-      • pages d'activités
-• Page HelloAsso (3h)
-• Derniers réglages (user select, regler font size, scroll bar, vérifier Formspree, clean le code, formater code, raccourcir url avec .htaccess) (2h)
+• Responsive :
+    • header
+    • accueil
+    • activités
+    • timeline
+    • équipe
+    • réseaux
+    • contact
+    • pages d'activités
+• Page HelloAsso
+• Derniers réglages (user select, regler font size, scroll bar, vérifier Formspree, clean le code, formater code, raccourcir url avec .htaccess)
 • Publication (RGPD, DNS, copyright, mentions légales, hébergement)
-• 10 ans d'EF'Ride

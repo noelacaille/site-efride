@@ -1,7 +1,7 @@
 A faire site EF'Ride :
 
-• régler pb scroll smooth (20min)
-• régler pb min height (30min)
+• régler pb scroll smooth (15min)
+• régler pb min height (15min)
 
 • 14:00 - 16:00 : responsive
       • header

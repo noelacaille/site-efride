@@ -27,6 +27,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-margin-top: var(--header-height);
 }
 
 html, body {
@@ -363,6 +364,7 @@ input:focus, textarea:focus{
     height: 450px;
     border-radius: var(--radius);
     transition: var(--transition);
+    scroll-margin-top: calc(var(--header-height) + 30px);
 }
 
 .card figure{
@@ -1017,7 +1019,7 @@ main.sp{
 /******************************************************/
 
 .text-presentation{
-    padding: 20px 0 50px 0;
+    padding: 20px 0 40px 0;
     margin: 0 auto;
     max-width: 700px;
     font-size: 18px;

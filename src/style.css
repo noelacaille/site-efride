@@ -142,6 +142,13 @@ main{
     height: 50px;
 }
 
+nav .efride-button{
+    /* width: auto; */
+    height: 50px;
+    background-color: var(--efride-red);
+    margin-left: 10px;
+}
+
 /******************************************************/
 
 header {
@@ -160,6 +167,8 @@ header {
 
 .logo {
     margin-right: 20px;
+    width: auto;
+    height: 90%;
 }
 
 nav ul {
@@ -178,8 +187,8 @@ nav ul li:last-child {
 }
 
 .logo img {
-    height: 60px;
-    width: auto;
+    height: 100%;
+    width: 100%;
     transition: var(--transition);
 }
 
@@ -202,31 +211,6 @@ nav ul li a.sc:hover {
     color: var(--efride-red);
 }
 
-.efride-button.rejoindre {
-    background-color: var(--efride-red);
-}
-
-/* nav ul li a.rejoindre {
-    color: var(--efride-white);
-    background-color: var(--efride-red);
-    padding: 10px 20px;
-    border-radius: var(--radius);
-    transition: var(--transition);
-} */
-/* 
-nav ul li a.rejoindre:hover {
-    color: var(--efride-white);
-    transform: scale(var(--scale-coef));
-} */
-
-/* nav ul li .sc-contact {
-    margin-right: 10px;
-}
-
-header nav ul li .rejoindre {
-    margin-left: 10px;
-} */
-
 /******************************************************/
 
 /* Ajoute un espacement vertical entre les sections */
@@ -246,26 +230,25 @@ section > * {
 
 /******************************************************/
 
+#section-reseaux{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .media-list{
     gap: 25px;
     padding: 20px;
 }
 
 .media-list .efride-button{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .media-list .efride-button{
     margin: 0;
-    padding: 10px;
+    padding: 0;
     width: 300px;
     height: 50px;
     border: none;
@@ -931,6 +914,7 @@ main.sp{
     background-color: var(--efride-grey);
     border-radius: 50%;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .dots .dot:hover{
@@ -950,33 +934,47 @@ main.sp{
     position: relative;
 }
 
-#section-accueil figure{
+.acc{
+    position: relative;
+    width: 100%;
+    height: calc(1/3 * 100%);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#saf1, #saf2{
+    position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
     opacity: 0.8;
 }
 
-#section-accueil figure img{
+#saf1 img, #saf2 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#section-accueil .cta{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#saf2{
+    width: 275px;
+    height: 275px;
+    z-index: 1;
+}
+
+.acc1 h1{
+    z-index: 2;
 }
 
 .counter-container{
     justify-content: center;
+    align-content: center;
     gap: 75px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .counter{
@@ -1010,8 +1008,83 @@ main.sp{
 }
 
 .page-title{
-    font-size: var(--extra-large-size);
+    font-size: 70px;
     font-weight: bold;
-    color: var(--efride-black);
-    margin-bottom: 20px;
+    color: var(--efride-white);
+    margin: 0;
 }
+
+/******************************************************/
+
+.text-presentation{
+    padding: 20px 0 50px 0;
+    margin: 0 auto;
+    max-width: 700px;
+    font-size: 18px;
+}
+
+.text-presentation a{
+    text-decoration: underline;
+    color: var(--efride-black);
+    transition: var(--transition);
+}
+
+.text-presentation a:hover{
+    color: var(--efride-blue);
+}
+
+/******************************************************/
+
+.coord{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.coord-elem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.coord-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.coord-icon img, .coord-link img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.coord-content {
+    flex: 1;
+}
+
+.coord-link {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.coord-link img{
+    transition: var(--transition);
+}
+
+.coord-link img:hover{
+    transform: scale(var(--scale-coef));
+    cursor: pointer;
+}
+
+.contact-text{
+    padding-bottom: 20px;
+}
+
+.contact-invite{
+    margin-top: 40px;
+}
+
+/******************************************************/

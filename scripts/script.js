@@ -1,13 +1,4 @@
-function updateDimensions() {
-    const dimensionsElement = document.getElementById('dimensions');
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    dimensionsElement.textContent = `${width} x ${height}`;
-}
-updateDimensions();
-window.addEventListener('resize', updateDimensions);
-
-/******************************************************/
+// EF'Ride - scripts/script.js
 
 const carroussel = document.querySelector('.sp-carroussel');
 const slides = document.querySelectorAll('.slide');
@@ -16,47 +7,47 @@ const next = document.querySelector('.next');
 const dots = document.querySelectorAll('.dot');
 let index = 0;
 
-const activeSlide = n => {
-    for (slide of slides) {
+const activeSlide = n =>{
+    for (slide of slides){
         slide.classList.remove('active');
     }
     slides[n].classList.add('active');
 }
 
-const activeDot = n => {
-    for (dot of dots) {
+const activeDot = n =>{
+    for (dot of dots){
         dot.classList.remove('active');
     }
     dots[n].classList.add('active');
 }
 
-const prepareCurrentSlide = ind => {
+const prepareCurrentSlide = ind =>{
     activeSlide(ind);
     activeDot(ind);
 }
 
-const nextSlide = () => {
-    if (index == slides.length - 1) {
+const nextSlide = () =>{
+    if (index == slides.length - 1){
         index = 0;
         prepareCurrentSlide(index);
-    } else {
+    } else{
         index++;
         prepareCurrentSlide(index);
     }
 }
 
-const prevSlide = () => {
-    if (index == 0) {
+const prevSlide = () =>{
+    if (index == 0){
         index = slides.length - 1;
         prepareCurrentSlide(index);
-    } else {
+    } else{
         index--;
         prepareCurrentSlide(index);
     }
 }
 
-dots.forEach((item, indexDot) => {
-    item.addEventListener('click', () => {
+dots.forEach((item, indexDot) =>{
+    item.addEventListener('click', () =>{
         index = indexDot;
         prepareCurrentSlide(index);
     })
@@ -69,12 +60,11 @@ if (prev){prev.addEventListener('click', prevSlide);}
 
 /******************************************************/
 
-// Vérifie si l'élément existe avant d'ajouter un événement
 const counters = document.querySelectorAll('.counter');
 
-counters.forEach((counter) => {
+counters.forEach((counter) =>{
   const numberElement = counter.querySelector('.number');
-  if (numberElement) {
+  if (numberElement){
     const targetNumber = parseInt(numberElement.textContent);
     const animationDuration = 2000;
     const framesPerSecond = 60;
@@ -83,16 +73,16 @@ counters.forEach((counter) => {
     let currentNumber = 0;
     let frame = 0;
 
-    function updateCounter() {
+    function updateCounter(){
       const progress = frame / (animationDuration / frameDuration);
       const increment = Math.floor(targetNumber * progress);
 
-      if (currentNumber < targetNumber) {
+      if (currentNumber < targetNumber){
         numberElement.textContent = increment;
         currentNumber = increment;
         frame++;
         requestAnimationFrame(updateCounter);
-      } else {
+      } else{
         numberElement.textContent = targetNumber;
       }
     }

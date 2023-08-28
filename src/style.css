@@ -1026,7 +1026,8 @@ main.sp{
 }
 
 .text-presentation a{
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
     color: var(--efride-black);
     transition: var(--transition);
 }

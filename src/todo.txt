@@ -10,3 +10,6 @@
 • Page HelloAsso
 • Derniers réglages (user select, regler font size, scroll bar, vérifier Formspree, clean le code, formater code, raccourcir url avec .htaccess)
 • Publication (RGPD, DNS, copyright, mentions légales, hébergement)
+
+https://blog.bourse-des-vols.com/choisir-sa-classe-de-voyage-en-avion-615955.html
+Google Analytics

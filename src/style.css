@@ -24,6 +24,7 @@
 }
 
 *, *::before, *::after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -54,7 +55,7 @@ h1{
     color: var(--efride-red);
 }
 
-header, img, .efride-button, .navv {
+header, img, .efride-button, .retour, .navv{
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -85,28 +86,27 @@ main{
     z-index: 9999;
 }
 
-/* .vertical-bar {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 100vh;
-    background-color: #000;
-    z-index: 9999;
-    pointer-events: none;
-} */
-
 /******************************************************/
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 .flex-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
+    -ms-flex-line-pack: start;
     align-content: flex-start;
     gap: 20px;
 }
@@ -123,6 +123,8 @@ main{
     font-weight: bold;
     cursor: pointer;
     position: relative;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     background-color: var(--efride-black);
     color: var(--efride-white);
@@ -135,6 +137,8 @@ main{
 }
 
 .efride-button:hover{
+    -webkit-transform: scale(var(--scale-coef));
+    -ms-transform: scale(var(--scale-coef));
     transform: scale(var(--scale-coef));
 }
 
@@ -144,7 +148,6 @@ main{
 }
 
 nav .efride-button{
-    /* width: auto; */
     height: 50px;
     background-color: var(--efride-red);
     margin-left: 10px;
@@ -156,8 +159,14 @@ header {
     background-color: var(--efride-black);
     color: var(--efride-white);
     padding: 10px 50px 10px 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: sticky;
     top: 0;
@@ -176,6 +185,8 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -190,10 +201,14 @@ nav ul li:last-child {
 .logo img {
     height: 100%;
     width: 100%;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 .logo img:hover {
+    -webkit-transform: scale(var(--scale-coef));
+    -ms-transform: scale(var(--scale-coef));
     transform: scale(var(--scale-coef));
 }  
 
@@ -201,10 +216,14 @@ nav ul li a {
     display: inline-block;
     padding: 10px;
     color: var(--efride-white);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 nav ul li a:hover {
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -214,17 +233,14 @@ nav ul li a.sc:hover {
 
 /******************************************************/
 
-/* Ajoute un espacement vertical entre les sections */
 section {
     margin-bottom: 40px;
 }
 
-/* Ajoute des paddings à l'intérieur des sections pour aérer le contenu */
 section {
     padding: 20px;
 }
 
-/* Ajoute une marge interne (espacement) entre les éléments à l'intérieur des sections */
 section > * {
     margin-bottom: 20px;
 }
@@ -242,8 +258,14 @@ section > * {
 }
 
 .media-list .efride-button{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -262,21 +284,29 @@ section > * {
 
 .efride-button#instagram{
     background-color: rgb(226, 24, 74);
+    background: -webkit-gradient(linear, left top, right top, from(rgb(255, 48, 25)), to(rgb(201, 4, 119)));
+    background: -o-linear-gradient(left, rgb(255, 48, 25) 0%, rgb(201, 4, 119) 100%);
     background: linear-gradient(to right, rgb(255, 48, 25) 0%, rgb(201, 4, 119) 100%);
 }
 
 .efride-button#tiktok{
     background-color: rgb(30, 29, 29);
+    background: -webkit-gradient(linear, left top, right top, from(rgb(30, 29, 29)), to(rgb(86, 84, 84)));
+    background: -o-linear-gradient(left, rgb(30, 29, 29) 0%, rgb(86, 84, 84) 100%);
     background: linear-gradient(to right, rgb(30, 29, 29) 0%, rgb(86, 84, 84) 100%);
 }
 
 .efride-button#linkedin{
     background-color: rgb(0, 89, 131);
+    background: -webkit-gradient(linear, left top, right top, from(rgb(0, 89, 131)), to(rgb(27, 126, 172)));
+    background: -o-linear-gradient(left, rgb(0, 89, 131) 0%, rgb(27, 126, 172) 100%);
     background: linear-gradient(to right, rgb(0, 89, 131) 0%, rgb(27, 126, 172) 100%);
 }
 
 .efride-button#discord{
     background-color: rgb(81, 101, 246);
+    background: -webkit-gradient(linear, left top, right top, from(rgb(81, 101, 246)), to(rgb(124, 132, 190)));
+    background: -o-linear-gradient(left, rgb(81, 101, 246) 0%, rgb(124, 132, 190) 100%);
     background: linear-gradient(to right, rgb(81, 101, 246) 0%, rgb(124, 132, 190) 100%);
 }
 
@@ -303,6 +333,22 @@ section > * {
 
 .form-elem{
     margin: 20px 0;
+}
+
+::-webkit-input-placeholder{
+    color: rgb(153, 153, 153);
+}
+
+::-moz-placeholder{
+    color: rgb(153, 153, 153);
+}
+
+:-ms-input-placeholder{
+    color: rgb(153, 153, 153);
+}
+
+::-ms-input-placeholder{
+    color: rgb(153, 153, 153);
 }
 
 ::placeholder{
@@ -342,10 +388,14 @@ input:focus, textarea:focus{
     border-radius: var(--radius);
     background-color: var(--efride-red);
     color: var(--efride-white);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 .submit-button button:hover {
+    -webkit-transform: scale(var(--scale-coef));
+    -ms-transform: scale(var(--scale-coef));
     transform: scale(var(--scale-coef));
     cursor: pointer;
 }
@@ -363,6 +413,8 @@ input:focus, textarea:focus{
     width: 300px;
     height: 450px;
     border-radius: var(--radius);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     scroll-margin-top: calc(var(--header-height) + 30px);
 }
@@ -371,6 +423,8 @@ input:focus, textarea:focus{
     width: 100%;
     height: 50%;
     border-radius: var(--radius) var(--radius) 0 0;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     overflow: hidden;
 }
@@ -378,11 +432,18 @@ input:focus, textarea:focus{
 .card figure img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
     transform-origin: center;
+    -webkit-transform: scale(var(--img-scale));
+    -ms-transform: scale(var(--img-scale));
     transform: scale(var(--img-scale));
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -394,6 +455,8 @@ input:focus, textarea:focus{
 .card-body h2{
     font-size: var(--large-size);
     text-align: center;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -408,7 +471,11 @@ input:focus, textarea:focus{
 }
 
 .card-body a{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: var(--efride-blue);
 }
@@ -418,18 +485,25 @@ input:focus, textarea:focus{
     width: 24px;
     height: 24px;
     margin-left: 5px;
+    -webkit-transform: translateX(var(--link-icon-translate));
+    -ms-transform: translateX(var(--link-icon-translate));
     transform: translateX(var(--link-icon-translate));
     opacity: var(--link-icon-opacity);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     color: var(--arrow-color);
 }
 
 .card-body a span{
     color: var(--efride-blue);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 .card:has(:hover, :focus){
+    -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
     cursor: pointer;
     --img-scale: var(--scale-coef);
@@ -485,6 +559,8 @@ input:focus, textarea:focus{
     background-color: var(--efride-white);
     position: relative;
     border-radius: 6px;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     border-radius: var(--radius);
 }
@@ -493,6 +569,7 @@ input:focus, textarea:focus{
     width: 100%;
     height: 100%;
     max-height: 250px;
+    -o-object-fit: cover;
     object-fit: cover;
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
@@ -501,6 +578,7 @@ input:focus, textarea:focus{
 .content figure img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
@@ -513,6 +591,8 @@ input:focus, textarea:focus{
 .content .text h2{
     text-align: center;
     color: var(--title-color);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -528,7 +608,9 @@ input:focus, textarea:focus{
 }
 
 .content:hover{
+    -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
+    cursor: -webkit-grab;
     cursor: grab;
     --title-color: var(--efride-blue);
 }
@@ -628,18 +710,9 @@ input:focus, textarea:focus{
 
 /******************************************************/
 
-/* .horizontal-bar{
-    position: absolute;
-    top: 200px;
-    width: 100%;
-    height: 100px;
-    background-color: var(--efride-black);
-    left: 0;
-    border-radius: var(--radius);
-    z-index: -1;
-} */
-
 .team-cards-container{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 60px;
 }
@@ -650,6 +723,8 @@ input:focus, textarea:focus{
     width: 200px;
     height: 350px;
     border-radius: var(--radius);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     border: 1px solid var(--efride-grey);
     overflow: hidden;
@@ -664,14 +739,21 @@ input:focus, textarea:focus{
 .team-card figure.photo img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     overflow: hidden;
+    -webkit-transform: scale(var(--img-scale-factor));
+    -ms-transform: scale(var(--img-scale-factor));
     transform: scale(var(--img-scale-factor));
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 .team-card:hover{
+    -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
+    cursor: -webkit-grab;
     cursor: grab;
     --img-scale-factor: var(--scale-coef);
 }
@@ -687,6 +769,8 @@ input:focus, textarea:focus{
 
 .team-card-body h2{
     font-size: var(--large-size);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     height: 40px;
 }
@@ -705,7 +789,10 @@ input:focus, textarea:focus{
 
 .team-card-links{
     height: 55px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-line-pack: center;
     align-content: center;
     gap: 10px;
 }
@@ -713,6 +800,8 @@ input:focus, textarea:focus{
 .team-card-links figure{
     width: 30px;
     height: 30px;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -720,10 +809,13 @@ input:focus, textarea:focus{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
 .team-card-links figure:hover{
+    -webkit-transform: scale(var(--scale-coef));
+    -ms-transform: scale(var(--scale-coef));
     transform: scale(var(--scale-coef));
     cursor: pointer;
 }
@@ -743,7 +835,11 @@ footer{
 
 footer #footer-logos{
     padding: 15px 15px 10px 15px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 60px;
 }
@@ -755,8 +851,13 @@ footer #footer-logos figure{
 footer #footer-logos figure img{
     width: auto;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    -webkit-transform: scale(var(--img-scale-f3));
+    -ms-transform: scale(var(--img-scale-f3));
     transform: scale(var(--img-scale-f3));
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -772,6 +873,8 @@ footer #footer-rights{
 }
 
 footer #footer-rights a{
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     color: var(--efride-white);
 }
@@ -797,7 +900,11 @@ footer #footer-rights a:hover{
 }
 
 .retour a{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: var(--efride-blue);
 }
@@ -807,14 +914,20 @@ footer #footer-rights a:hover{
     width: 24px;
     height: 24px;
     margin-right: 5px;
+    -webkit-transform: rotate(180deg) translateX(var(--link-icon-translate));
+    -ms-transform: rotate(180deg) translateX(var(--link-icon-translate));
     transform: rotate(180deg) translateX(var(--link-icon-translate));
     opacity: var(--link-icon-opacity);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     color: var(--arrow-color);
 }
 
 .retour a span{
     color: var(--efride-blue);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -859,6 +972,7 @@ main.sp{
 .sp-carroussel .slide img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -870,17 +984,25 @@ main.sp{
     width: 25%;
     height: 90%;
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .sp-carroussel .prev-box{
     left: 0;
+    -webkit-box-pack: right;
+    -ms-flex-pack: right;
     justify-content: right;
 }
 
 .sp-carroussel .next-box{
     left: 75%;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
     justify-content: left;
 }
 
@@ -888,8 +1010,14 @@ main.sp{
     width: 35px;
     height: 70px;
     font-size: var(--large-size);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 10px;
 }
@@ -904,8 +1032,14 @@ main.sp{
     top: 90%;
     width: 100%;
     height: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
 }
@@ -915,6 +1049,8 @@ main.sp{
     height: 12px;
     background-color: var(--efride-grey);
     border-radius: 50%;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
     cursor: pointer;
 }
@@ -943,9 +1079,18 @@ main.sp{
     padding: 0;
     margin: 0;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -960,6 +1105,7 @@ main.sp{
 #saf1 img, #saf2 img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -974,7 +1120,10 @@ main.sp{
 }
 
 .counter-container{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-line-pack: center;
     align-content: center;
     gap: 75px;
 }
@@ -998,6 +1147,7 @@ main.sp{
 .counter .icon img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -1025,14 +1175,17 @@ main.sp{
     font-size: 18px;
 }
 
-.text-presentation a{
+.text-presentation a, .mentions-legales a{
     text-decoration: none;
     font-weight: bold;
     color: var(--efride-black);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
-.text-presentation a:hover{
+.text-presentation a:hover,
+.mentions-legales a:hover{
     color: var(--efride-blue);
 }
 
@@ -1044,7 +1197,11 @@ main.sp{
 }
 
 .coord-elem {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -1059,11 +1216,14 @@ main.sp{
 .coord-icon img, .coord-link img{
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     overflow: hidden;
 }
 
 .coord-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
@@ -1074,10 +1234,14 @@ main.sp{
 }
 
 .coord-link img{
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
 }
 
 .coord-link img:hover{
+    -webkit-transform: scale(var(--scale-coef));
+    -ms-transform: scale(var(--scale-coef));
     transform: scale(var(--scale-coef));
     cursor: pointer;
 }
@@ -1089,5 +1253,59 @@ main.sp{
 .contact-invite{
     margin-top: 40px;
 }
+
+/******************************************************/
+
+.mentions-legales{
+    margin: 50px 100px;
+    padding: 50px 0px;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.mentions-legales h1 ~ p {
+    color: var(--efride-grey);
+    margin-bottom: 20px;
+}
+
+.mentions-legales h2 {
+    color: var(--efride-blue);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.mentions-legales div {
+    margin-top: 30px;
+}
+
+.mentions-legales div p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mentions-legales{
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mentions-legales{
+        max-width: 75%;
+    }
+}
+
+/******************************************************/
+
+
+
+/******************************************************/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 
 /******************************************************/

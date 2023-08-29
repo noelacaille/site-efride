@@ -880,10 +880,11 @@ footer #footer-rights a:hover{
     --link-icon-translate: -20px;
     --link-icon-opacity: 0;
     --arrow-color: transparent;
-    position: sticky;
+    position: fixed;
+    /* float: left; */
     padding: 10px;
-    top: 130px;
-    left: 0px;
+    top: calc(var(--header-height) + 20px);
+    left: 20px;
     width: 120px;
     height: auto;
     z-index: 1000;
@@ -934,124 +935,6 @@ footer #footer-rights a:hover{
     inset-block: 0;
     inset-inline: 0;
     content: "";
-}
-
-/******************************************************/
-
-main.sp{
-    margin: 40px 80px;
-    padding: 0;
-}
-
-.sp-carroussel{
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-
-.sp-carroussel .slide{
-    width: 50%;
-    height: 90%;
-    display: none;
-    overflow: hidden;
-    border-radius: var(--radius);
-    position: absolute;
-    left: 25%;
-}
-
-.sp-carroussel .slide img{
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-}
-
-.sp-carroussel .slide.active{
-    display: block;
-}
-
-.sp-carroussel .nav-box{
-    width: 25%;
-    height: 90%;
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.sp-carroussel .prev-box{
-    left: 0;
-    -webkit-box-pack: right;
-    -ms-flex-pack: right;
-    justify-content: right;
-}
-
-.sp-carroussel .next-box{
-    left: 75%;
-    -webkit-box-pack: left;
-    -ms-flex-pack: left;
-    justify-content: left;
-}
-
-.sp-carroussel .navv{
-    width: 35px;
-    height: 70px;
-    font-size: var(--large-size);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 10px;
-}
-
-.sp-carroussel .navv:hover{
-    cursor: pointer;
-    color: var(--efride-grey);
-}
-
-.dots{
-    position: absolute;
-    top: 90%;
-    width: 100%;
-    height: 10%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.dots .dot{
-    width: 12px;
-    height: 12px;
-    background-color: var(--efride-grey);
-    border-radius: 50%;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.dots .dot:hover{
-    background-color: var(--efride-black);
-}
-
-.dots .dot.active{
-    background-color: var(--efride-black);
 }
 
 /******************************************************/
@@ -1166,7 +1049,9 @@ main.sp{
     font-size: 18px;
 }
 
-.text-presentation a, .mentions-legales a{
+.text-presentation a,
+.mentions-legales a,
+.section-description a{
     text-decoration: none;
     font-weight: bold;
     color: var(--efride-black);
@@ -1176,7 +1061,8 @@ main.sp{
 }
 
 .text-presentation a:hover,
-.mentions-legales a:hover{
+.mentions-legales a:hover,
+.section-description a:hover{
     color: var(--efride-blue);
 }
 
@@ -1288,15 +1174,176 @@ main.sp{
 
 /******************************************************/
 
+main.sp{
+    margin: 50px;
+    padding: 0 50px;
+}
 
+.section-carroussel{
+    width: 60%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-carroussel .slide{
+    width: 80%;
+    height: 90%;
+    display: none;
+    overflow: hidden;
+    border-radius: var(--radius);
+    position: absolute;
+    left: 10%;
+}
+
+.section-carroussel .slide img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.section-carroussel .slide.active{
+    display: block;
+}
+
+.section-carroussel .nav-box{
+    width: auto;
+    height: 90%;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.section-carroussel .prev-box{
+    right: 90%;
+    -webkit-box-pack: right;
+    -ms-flex-pack: right;
+    justify-content: right;
+}
+
+.section-carroussel .next-box{
+    left: 90%;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+}
+
+.section-carroussel .navv{
+    width: 35px;
+    height: 70px;
+    font-size: var(--large-size);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.section-carroussel .navv:hover{
+    cursor: pointer;
+    color: var(--efride-grey);
+}
+
+.dots{
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    height: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dots .dot{
+    width: 12px;
+    height: 12px;
+    background-color: var(--efride-grey);
+    border-radius: 50%;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.dots .dot:hover{
+    background-color: var(--efride-black);
+}
+
+.dots .dot.active{
+    background-color: var(--efride-black);
+}
 
 /******************************************************/
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+.section-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 0 100px;
+    margin-bottom: 40px;
+}
+
+.section-info {
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.info + .info {
+    margin-top: 20px;
+}
+
+.info figure {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.info figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.info p {
+    margin: 0;
+    text-align: left;
+}
 
 /******************************************************/
+
+.section-description{
+    text-align: justify;
+    padding: 0 200px;
+}
+
+.section-description p {
+    margin: 30px 0;
+}

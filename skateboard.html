@@ -26,18 +26,28 @@ $$$$$$$$\ $$ |          $$ |  $$ |$$ |\$$$$$$$ |\$$$$$$$\
 
 <body>
 
+    <div id="dimensionDisplay"></div>
+
     <header>
-        <div class="logo">
+        <div class="menu-logo">
             <a href="index.html#accueil"><img src="img/logos/Logo_EFRide_Bas.png"></a>
         </div>
+        <div class="menu-elem-right">
+            <div class="menu-hamburger">
+                <input id="menu-toggle" type="checkbox">
+                <label class="menu-btn" for="menu-toggle">
+                    <span></span>
+                </label>
+            </div>
+        </div>
         <nav>
-            <ul>
-                <li><a href="index.html#section-accueil" class="sc sc-accueil">Accueil</a></li>
-                <li><a href="index.html#section-activites" class="sc sc-activites">Nos&nbsp;activités</a></li>
-                <li><a href="index.html#section-histoire" class="sc sc-histoire">Notre&nbsp;histoire</a></li>
-                <li><a href="index.html#section-equipe" class="sc sc-equipe">Notre&nbsp;équipe</a></li>
-                <li><a href="index.html#section-reseaux" class="sc sc-reseaux">Nos&nbsp;réseaux</a></li>
-                <li><a href="index.html#section-contact" class="sc sc-contact">Contact</a></li>
+            <ul class="menu-box">
+                <li><a href="index.html#section-accueil" class="menu-item">Accueil</a></li>
+                <li><a href="index.html#section-activites" class="menu-item">Nos&nbsp;activités</a></li>
+                <li><a href="index.html#section-histoire" class="menu-item">Notre&nbsp;histoire</a></li>
+                <li><a href="index.html#section-equipe" class="menu-item">Notre&nbsp;équipe</a></li>
+                <li><a href="index.html#section-reseaux" class="menu-item">Nos&nbsp;réseaux</a></li>
+                <li><a href="index.html#section-contact" class="menu-item">Contact</a></li>
                 <li>
                     <div class="efride-button rejoindre">
                         <a href="rejoindre.html">Nous rejoindre</a>
@@ -132,7 +142,7 @@ $$$$$$$$\ $$ |          $$ |  $$ |$$ |\$$$$$$$ |\$$$$$$$\
 
     </main>
 
-    <footer>
+    <footer id="footer">
         <div id="footer-logos" class="flex-container">
             <figure id="footer-logo-efride">
                 <a href="index.html#accueil">
@@ -147,6 +157,13 @@ $$$$$$$$\ $$ |          $$ |  $$ |$$ |\$$$$$$$ |\$$$$$$$\
         </div>
         <div id="footer-rights">
             ©&nbsp;EF'Ride&nbsp;2023 &nbsp;&nbsp;&bull;&nbsp;&nbsp; Tous&nbsp;droits&nbsp;réservés &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="mentions-legales.html">Mentions&nbsp;légales</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; Site&nbsp;développé&nbsp;par&nbsp;<a href="https://www.linkedin.com/in/noe-lacaille/" target="_blank">Noé&nbsp;Lacaille</a>
+        </div>
+        <div id="footer-rights-resp">
+            <p>©&nbsp;EF'Ride&nbsp;2023</p>
+            <p>Tous&nbsp;droits&nbsp;réservés</p>
+            <p><a href="mentions-legales.html">Mentions&nbsp;légales</a></p>
+            <p>Site&nbsp;développé&nbsp;par&nbsp;<a href="https://www.linkedin.com/in/noe-lacaille/" target="_blank">Noé&nbsp;Lacaille</a></p>
+        </div>
     </footer>
 
     <script src="scripts/script.js"></script>

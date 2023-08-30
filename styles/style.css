@@ -1534,7 +1534,7 @@ main.sp{
 
 /******************************************************/
 
-.section-container{
+.section-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -1548,6 +1548,79 @@ main.sp{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1250px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .section-info{
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .section-carroussel{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-container{
+        padding: 0;
+    }
+
+    .section-carroussel{
+        width: 100%;
+        position: relative;
+    }
+
+    .section-carroussel .slide{
+        width: 100%;
+        left: 0;
+        border-radius: 0%;
+        z-index: 1;
+    }
+
+    .section-carroussel .nav-box{
+        position: absolute;
+        z-index: 2;
+    }
+
+    .section-carroussel .prev-box{
+        left: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    .section-carroussel .next-box{
+        right: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    .section-carroussel .navv{
+        font-size: 50px;
+        color: var(--efride-grey);
+    }
+
+    .section-carroussel .navv:hover{
+        color: var(--efride-black);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-carroussel .prev-box{
+        position: absolute;
+        left: 0;
+        width: 50px;
+    }
+
+    .section-carroussel .next-box{
+        position: absolute;
+        left: calc(100% - 50px);
+        width: 50px;
+    }
 }
 
 .info{
@@ -1588,6 +1661,12 @@ main.sp{
 
 .section-description p{
     margin: 30px 0;
+}
+
+@media screen and (max-width: 1250px) {
+    .section-description{
+        padding: 0 20px;
+    }
 }
 
 /******************************************************/

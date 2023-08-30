@@ -93,32 +93,6 @@ counters.forEach((counter) =>{
 
 /******************************************************/
 
-document.addEventListener('DOMContentLoaded', function(){
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    const body = document.body;
-
-    menuToggle.addEventListener('click', function(){
-        menu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    });
-
-    // Gestion des clics sur les liens du menu
-    const menuLinks = menu.querySelectorAll('a');
-    menuLinks.forEach(link =>{
-        link.addEventListener('click', function(){
-            menu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            body.classList.remove('menu-open');
-        });
-    });
-});
-
-
-
-/******************************************************/
-
 function updateDimensionDisplay(){
     const dimensionDisplay = document.getElementById('dimensionDisplay');
     const width = window.innerWidth;

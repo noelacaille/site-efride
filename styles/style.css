@@ -6,12 +6,28 @@
 ::-moz-selection{background-color: rgba(119, 124, 240, 0.4);}
 ::selection{background-color: rgba(119, 124, 240, 0.4);}
 
-:root{
+/*
+
     --efride-black: #393e41;
     --efride-red: #c70404;
     --efride-blue: #28666e;
     --efride-grey: #929982;
     --efride-white: #f6f7eb;
+    --efride-roller-purple: #434889;
+    --efride-cyclisme-green: #4b6340;
+    --efride-skateboard-orange: #de893f;
+
+*/
+
+:root{
+    --efride-black: rgb(57, 62, 65);
+    --efride-red: rgb(199, 4, 4);
+    --efride-blue: rgb(40, 102, 110);
+    --efride-grey: rgb(146, 153, 130);
+    --efride-white: rgb(246, 247, 235);
+    --efride-roller-purple: rgb(67, 72, 137);
+    --efride-cyclisme-green: rgb(75, 99, 64);
+    --efride-skateboard-orange: rgb(222, 137, 63);
     --scale-coef: 1.05;
     --anim-time: 0.3s;
     --radius: 10px;
@@ -589,6 +605,18 @@ input:focus, textarea:focus{
     text-align: left;
 }
 
+#roller h2, .roller-title{
+    color: var(--efride-roller-purple);
+}
+
+#cyclisme h2, .cyclisme-title{
+    color: var(--efride-cyclisme-green);
+}
+
+#skateboard h2, .skateboard-title{
+    color: var(--efride-skateboard-orange);
+}
+
 .card-body h2{
     font-size: var(--large-size);
     text-align: center;
@@ -640,13 +668,23 @@ input:focus, textarea:focus{
 }
 
 .card:has(:hover, :focus){
-    -webkit-box-shadow: var(--shadow);
-    box-shadow: var(--shadow);
     cursor: pointer;
     --img-scale: var(--scale-coef);
     --link-icon-translate: 0;
     --link-icon-opacity: 1;
     --arrow-color: var(--efride-blue);
+}
+
+.card#cyclisme:has(:hover, :focus){
+    box-shadow: rgba(75, 99, 64, 0.16) 0px 10px 36px 0px, rgba(75, 99, 64, 0.06) 0px 0px 0px 1px;
+}
+
+.card#roller:has(:hover, :focus){
+    box-shadow: rgba(67, 72, 137, 0.16) 0px 10px 36px 0px, rgba(67, 72, 137, 0.06) 0px 0px 0px 1px;
+}
+
+.card#skateboard:has(:hover, :focus){
+    box-shadow: rgba(222, 137, 63, 0.16) 0px 10px 36px 0px, rgba(222, 137, 63, 0.06) 0px 0px 0px 1px;
 }
 
 .card a::after{
@@ -1493,7 +1531,30 @@ main.sp{
 
 .section-carroussel .navv:hover{
     cursor: pointer;
-    color: var(--efride-grey);
+}
+
+.sp-cyclisme .section-carroussel .navv{
+    color: var(--efride-cyclisme-green);
+}
+
+.sp-cyclisme .section-carroussel .navv:hover{
+    color: var(--efride-black);
+}
+
+.sp-roller .section-carroussel .navv{
+    color: var(--efride-roller-purple);
+}
+
+.sp-roller .section-carroussel .navv:hover{
+    color: var(--efride-black);
+}
+
+.sp-skateboard .section-carroussel .navv{
+    color: var(--efride-skateboard-orange);
+}
+
+.sp-skateboard .section-carroussel .navv:hover{
+    color: var(--efride-black);
 }
 
 .dots{

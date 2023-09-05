@@ -92,16 +92,3 @@ counters.forEach((counter) =>{
 });
 
 /******************************************************/
-
-function updateDimensionDisplay(){
-    const dimensionDisplay = document.getElementById('dimensionDisplay');
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    dimensionDisplay.textContent = `${width} x ${height}`;
-}
-
-updateDimensionDisplay();
-
-window.addEventListener('resize', updateDimensionDisplay);
-
-/******************************************************/
